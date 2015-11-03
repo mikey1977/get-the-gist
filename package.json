@@ -1,0 +1,26 @@
+{
+  "name": "git-the-gist",
+  "version": "1.0.0",
+  "description": "app that edits github gists",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikey1977/git-the-gist.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mikey1977/git-the-gist/issues"
+  },
+  "homepage": "https://github.com/mikey1977/git-the-gist#readme",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "express-session": "^1.12.1",
+    "oauth": "^0.9.14",
+    "request": "^2.65.0"
+  }
+}
