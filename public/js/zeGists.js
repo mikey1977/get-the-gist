@@ -10,9 +10,16 @@ zeGists
   //route architicture for zeGists
   $routeProvider
   //user directed to login page when no token in local storage
-  .when('/login', {
+  .when('/auth/login', {
     templateUrl : 'views/login.html',
     controller : 'loginController',
+  })
+
+  //google search route params for Angular
+  //retrieve final token allowing permission to make changes on user's behalf
+  .when('/auth/auth_token/code', {
+    templateUrl : 'views/auth_token.html',
+    controller : 'auth_tokenController'
   })
 
   //user directed to gists page when token in local storage

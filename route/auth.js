@@ -53,7 +53,7 @@ router
             console.error( results.error );
             res.status(401).json( results.error );
           } else {
-            res.json({ access_token : access_token});
+            res.redirect( 'auth/auth_token'+access_token );
           }
         }
       );
