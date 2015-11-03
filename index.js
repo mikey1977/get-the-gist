@@ -4,7 +4,7 @@ const PORT = process.env.PORT || 3000;
 var bodyParser = require('body-parser');
 var express = require('express');
 var app = express();
-var api = require('/public/route/api');
+var auth = require('/public/route/auth');
 var OAuth2 = require('oauth').OAuth2;
 var oauth = new OAuth2(
   process.env.GITHUB_CLIENT_ID,
@@ -21,8 +21,8 @@ app.use(express.static('./public'));
 //parse json encoded callback through middleware
 app.use(bodyParser.urlencoded({ extended : true }));
 
-//route to the api router '/public/route/api'
-app.use('/api', api);
+//route to the auth router '/public/route/auth'
+app.use('/auth', auth);
 
 app.listen(PORT, function() {
   console.log('# Butt');
