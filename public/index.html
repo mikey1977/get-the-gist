@@ -4,12 +4,41 @@
   <meta charset="UTF-8">
   <title>Git-Ze-Gists</title>
 </head>
-<body np-app='zeGists'>
+<body ng-app='zeGists'>
+
+  <h1>
+    {{ "FUCK" + " Angular" }} {{ APP_VERSION }}
+  </h1>
+
+  <div>
+    {{ 2 + 3 }}
+  </div>
+
+  <div ng-controller='myController'>
+    <div>
+
+  <!-- creates two way bindable model -->
+      <input type="text" ng-model="myModel" />
+
+    </div>
+
+    <div>
+      {{ myModel }}
+    </div>
+
+    <div>
+      Main Character: {{myFirstName}}
+    </div>
+  </div>
 
 <div ng-view></div>
+
 <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular.min.js'></script>
+
 <script src="js/zeGists.js"></script>
 <script src="js/controllers/gists-controller.js"></script>
-<script src = "js/providers.js"></script>
+<script src="js/values.js"></script>
+<script src="js/constants.js"></script>
+<!-- <script src = "js/providers.js"></script> -->
 </body>
 </html>

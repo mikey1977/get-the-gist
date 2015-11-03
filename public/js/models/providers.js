@@ -17,21 +17,21 @@
 // });
 
 
-angular.module('zeGists')
-  .provider('Gists', function() {
+// angular.module('zeGists')
+//   .provider('Gists', function() {
 
-//different than factories and services, in that it is configurable
-    var self = this;
-    this.endpoint = '';
-    this.setEndpoint = function(endpoint) {
-      self.endpoint = endpoint;
-    };
-    this.$get = ['$http', function($http) {
-      return {
-        getGists : function() {
-          // use ajax to return promise
-          return $http.get(self.endpoint); //go to controllers
-        }
-      };
-    }];
-  });
+// //different than factories and services, in that it is configurable
+//     var self = this;
+//     this.endpoint = '';
+//     this.setEndpoint = function(endpoint) {
+//       self.endpoint = endpoint;
+//     };
+//     this.$get = ['$http', function($http) {
+//       return {
+//         getGists : function() {
+//           // use ajax to return promise
+//           return $http.get(self.endpoint); //go to controllers
+//         }
+//       };
+//     }];
+//   });
