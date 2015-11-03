@@ -4,7 +4,8 @@ const PORT = process.env.PORT || 3000;
 var bodyParser = require('body-parser');
 var express = require('express');
 var app = express();
-var auth = require('/public/route/auth');
+var auth = require('./route/auth');
+var gists = require('./route/gists');
 var OAuth2 = require('oauth').OAuth2;
 var oauth = new OAuth2(
   process.env.GITHUB_CLIENT_ID,
@@ -23,6 +24,9 @@ app.use(bodyParser.urlencoded({ extended : true }));
 
 //route to the auth router '/public/route/auth'
 app.use('/auth', auth);
+
+// route to the gists router '/public/route/gists'
+app.use('/gists', gists);
 
 app.listen(PORT, function() {
   console.log('# Butt');
