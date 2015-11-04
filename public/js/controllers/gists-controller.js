@@ -5,7 +5,7 @@ zeGists.controller('gistController', [
   'httpRequest',
   function($scope, $http, httpRequest){
     httpRequest.gitGists()
-    .then(function(data){
+    .success(function(data){
       console.log(data);
     });
 }]);

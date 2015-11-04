@@ -1,4 +1,5 @@
-zeGists.factory('httpRequestInterceptor', ['$localStorage', function($localStorage) {
+angular.module('zeGists')
+.factory('httpRequestInterceptor', ['$localStorage', function($localStorage) {
   var httpRequestInterceptor = {
     request : function(config) {
       if(!$localStorage.isAnonymous) {

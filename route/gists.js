@@ -5,6 +5,21 @@ var router = express.Router();
 
 router
   .route('/')
+    .get(getAuthBearerToken, function(req, res) {
+      request.post({
+        url : 'https://api.github.com/gists',
+        json : true,
+        headers : {
+          Authorization : 'Bearer '+req.access_token,
+          'User-Agent' : 'Node'
+        },
+      }, function(err, response, body) {
+        if(err) {
+          return res.status(500).json(err);
+        }
+        res.json(body);
+      });
+    })
     .post(getAuthBearerToken, function(req, res) {
       request.post({
         url : 'https://api.github.com/gists',
@@ -28,7 +43,7 @@ router
     });
 
 router
-  .route('/gists/:id')
+  .route('/:id')
     .get(getAuthBearerToken, function(req, res) {
       request.get({
         url : 'https://api.github.com/gists',

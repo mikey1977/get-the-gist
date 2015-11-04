@@ -9,5 +9,4 @@ angular.module('zeGists')
 
   $localStorage.message = $routeParams.id;
   $window.location.href = '#/gists';
-  console.log($localStorage.message);
 }]);
