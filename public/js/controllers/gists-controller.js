@@ -2,11 +2,20 @@ var zeGists = angular.module('zeGists');
 zeGists.controller('gistController', [
   '$scope',
   '$http',
+  '$location',
   'httpRequest',
-  function($scope, $http, httpRequest){
+  function($scope, $http, $location, httpRequest){
+
+    $scope.customNavigate = function(id) {
+      $location.path('/gists/'+ id);
+    };
+
+    $scope.gists = [];
+    //gitGists method from services.js referring to 'httpRequest' service
     httpRequest.gitGists()
-    .success(function(data){
-      console.log(data);
+    .success(function(gists){
+      $scope.gists = gists;
+      console.log(gists);
     });
 }]);
 
