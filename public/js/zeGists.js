@@ -1,4 +1,4 @@
-angular.module('zeGists', ['ngRoute']);
+angular.module('zeGists', ['ngRoute', 'ngStorage']);
 
 var zeGists = angular.module('zeGists');
 
@@ -12,12 +12,12 @@ zeGists
   //user directed to login page when no token in local storage
   .when('/auth/login', {
     templateUrl : 'views/login.html',
-    controller : 'loginController',
+    controller : 'loginController'
   })
 
   //google search route params for Angular
   //retrieve final token allowing permission to make changes on user's behalf
-  .when('/auth/auth_token/code', {
+  .when('/auth/auth_token/:id', {
     templateUrl : 'views/auth_token.html',
     controller : 'auth_tokenController'
   })

@@ -21,7 +21,7 @@ router
         scope : ['gist'],
         state : 'Authorize'+Math.round(Math.random()*9999999)
       });
-      res.json({ url : authURL });
+      res.redirect( authURL );
     });
 
 // Callback from GitHub on successful authorization
@@ -53,7 +53,7 @@ router
             console.error( results.error );
             res.status(401).json( results.error );
           } else {
-            res.redirect( 'auth/auth_token'+access_token );
+            res.redirect( '/#/auth/auth_token/'+access_token );
           }
         }
       );
