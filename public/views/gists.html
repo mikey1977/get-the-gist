@@ -1,9 +1,11 @@
 <div>
-  <h2>Do you get ze Gist?</h2>
+  <div ng-controller='gistController'>
+    {{ myModel }}
+  </div>
   <ul>
     <li class="gists" ng-repeat="gist in gists"></li>
     <h5 class="gist_title">
-      <!-- dynamically insert gist title by id -->
+
     </h5>
     <p class="gist_body">
       <!-- dynamically insert gist body by id -->

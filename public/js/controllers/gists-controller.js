@@ -1,8 +1,6 @@
 var zeGists = angular.module('zeGists');
-zeGists.controller('myController', [ '$scope', 'mainCharacter', function($scope, mainCharacter) {
-  $scope.myFirstName = 'Pound Butt';
-  $scope.myModel = 'Anything you want to put there';
-  $scope.mainCharacter = mainCharacter;
+zeGists.controller('gistController', [ '$scope', function($scope) {
+  $scope.myModel = 'zeGist List';
 }]);
 
 // //using controller to communicate with provider to bind data to views/html through scope

@@ -1,9 +1,13 @@
+// collect auth token from github and store it into localStorage
 angular.module('zeGists')
 .controller('auth_tokenController', [
   '$scope',
   '$localStorage',
   '$routeParams',
-  function($scope, $localStorage, $routeParams) {
-  $localStorage.message = $routeParams.id;
+  '$window',
+  function($scope, $localStorage, $routeParams, $window) {
 
+  $localStorage.message = $routeParams.id;
+  $window.location.href = '#/gists';
+  console.log($localStorage.message);
 }]);
