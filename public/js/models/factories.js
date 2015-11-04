@@ -3,7 +3,7 @@ angular.module('zeGists')
   var httpRequestInterceptor = {
     request : function(config) {
       if(!$localStorage.isAnonymous) {
-      config.headers['authentication'] = $localStorage.message;
+      config.headers['authorization'] = $localStorage.message;
       }
 
       return config;
