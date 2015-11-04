@@ -1,6 +1,13 @@
 var zeGists = angular.module('zeGists');
-zeGists.controller('gistController', [ '$scope', function($scope) {
-  $scope.myModel = 'zeGist List';
+zeGists.controller('gistController', [
+  '$scope',
+  '$http',
+  'httpRequest',
+  function($scope, $http, httpRequest){
+    httpRequest.gitGists()
+    .then(function(data){
+      console.log(data);
+    });
 }]);
 
 // //using controller to communicate with provider to bind data to views/html through scope

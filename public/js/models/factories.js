@@ -8,6 +8,7 @@ zeGists.factory('httpRequestInterceptor', ['$localStorage', function($localStora
       return config;
     }
   };
+
   return httpRequestInterceptor;
 }])
 .config(['$httpProvider', function ($httpProvider) {
