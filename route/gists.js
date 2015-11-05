@@ -26,6 +26,16 @@ router
       });
     })
     .post(getAuthBearerToken, function(req, res) {
+      console.log('body', req.body);
+      var data = {};
+
+      var fileName = req.body.fileName;
+      var content = req.body.content;
+      data[fileName + '.txt'] = {
+        content : content
+      }
+      console.log('fileName', fileName);
+      console.log('content', content);
 
       //post request from express to gitHub API
       request.post({
@@ -38,10 +48,11 @@ router
         body : {
           description : req.body.description,
           public : true,
-          files : JSON.parse(req.body.files)
+          files : data
         }
       }, function(err, response, body) {
         if(err) {
+          console.log(err);
           return res.status(500).json(err);
         }
 

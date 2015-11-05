@@ -39,8 +39,8 @@ zeGists
   })
 
   .when('/new', {
-    templateUrl : 'views/new-gist.html'
-    //controllernew
+    templateUrl : 'views/new-gist.html',
+    controller : 'newGistController'
   })
 
   //when user breaks things

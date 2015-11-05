@@ -1,15 +1,26 @@
-<div>
+<div ng-controller='newGistController'>
   <fieldset>
+
     <div>
-      <label for='new_gist_description'>Description</label>
-      <input type='text' ng-model=''>
+      <label>File Name
+      <input type='text' ng-model='newGist.fileName'>('.txt')
+      </label>
     </div>
+
     <div>
-      <label for='new_gist_content'>Content</label>
-      <input type='text' ng-model=''>
+      <label>Description
+      <input type='text' ng-model='newGist.description'>
+      </label>
     </div>
+
     <div>
-      <button type='button' ng-click=''>#</button>
+      <label>Content
+      <input type='text' ng-model='newGist.content'>
+      </label>
+    </div>
+
+    <div>
+      <button type='button' ng-click='create(newGist)'>#</button>
     </div>
   </fieldset>
 </div>

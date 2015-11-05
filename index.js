@@ -14,6 +14,9 @@ app.use(express.static('./public'));
 //parse json encoded callback through middleware
 app.use(bodyParser.urlencoded({ extended : true }));
 
+//tells server to parse JSON files from client side instead of query string
+app.use(bodyParser.json());
+
 app.get('/', function(req, res) {
   console.log(req);
   res.json({ status : 200 });
