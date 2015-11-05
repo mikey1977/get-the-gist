@@ -10,6 +10,10 @@ zeGists.controller('gistController', [
       $location.path('/gists/'+ id);
     };
 
+    $scope.go = function( route ) {
+      $location.path( route );
+    }
+
     $scope.gists = [];
     //gitGists method from services.js referring to 'httpRequest' service
     httpRequest.gitGists()

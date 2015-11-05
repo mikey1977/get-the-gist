@@ -38,6 +38,11 @@ zeGists
     // controller :
   })
 
+  .when('/new', {
+    templateUrl : 'views/new-gist.html'
+    //controllernew
+  })
+
   //when user breaks things
   .otherwise({
     templateUrl : 'views/404.html'

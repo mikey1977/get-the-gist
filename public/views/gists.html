@@ -8,10 +8,10 @@
           <h3 class='gists_description'>
             Description : {{ gist.description }}
             <button ng-click="customNavigate(gist.id)">SELECT</button>
+          </h3>
             <h4>
              Date created : {{ gist.created_at }}
             </h4>
-          </h3>
           <ul>
             <li class='gists_file' ng-repeat='file in gist.files'>
             Title : {{ file.filename }}
@@ -21,8 +21,7 @@
           </ul>
         </li>
       </ul>
-  <button>ADD NEW</button>
-  <button>EDIT</button>
-  <button>DELETE</button>
+  <button ng-click="go('/new')">ADD NEW</button>
+
   </div>
 </div>
