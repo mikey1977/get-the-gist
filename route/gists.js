@@ -78,6 +78,7 @@ router
         res.json(JSON.parse(body));
       });
     })
+    .put()
     .delete(getAuthBearerToken, function(req, res) {
       console.log('string', req.params.id);
       request.del({
