@@ -3,19 +3,19 @@
 
     <div>
       <label>File Name
-        <input type='text' ng-model='newGist.fileName'>
+        <input type='text' class='inputField' ng-model='newGist.fileName'>
       </label>
     </div>
 
     <div>
       <label>Description
-        <input type='text' ng-model='newGist.description'>
+        <input type='text' class='inputField' ng-model='newGist.description'>
       </label>
     </div>
 
     <div>
       <label>File Type
-        <input type='text' name='fileType' ng-model='newGist.filetype' required>
+        <input type='text' class='inputField' name='fileType' ng-model='newGist.filetype' required>
       </label>
       <div role="alert">
         <span class="error" style='color:red' ng-show="subNewGists.fileType.$error.required">
@@ -25,7 +25,7 @@
 
     <div>
       <label>Content
-       <input type='text' ng-model='newGist.content'>
+       <input type='text' class='inputField' id='content' ng-model='newGist.content'>
       </label>
     </div>
 
