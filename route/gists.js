@@ -30,8 +30,9 @@ router
       var data = {};
 
       var fileName = req.body.fileName;
+      var type = req.body.filetype;
       var content = req.body.content;
-      data[fileName + '.txt'] = {
+      data[fileName+'.'+type] = {
         content : content
       }
       console.log('fileName', fileName);
