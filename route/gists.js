@@ -15,9 +15,9 @@ router
         url : 'https://api.github.com/gists',
         json : true,
         headers : {
-          authorization : 'Bearer '+req.access_token,
+          authorization : 'Bearer ' + req.access_token,
           'User-Agent' : 'Node'
-        },
+        }
       }, function(err, response, body) {
         if(err) {
           return res.status(500).json(err);
@@ -26,24 +26,21 @@ router
       });
     })
     .post(getAuthBearerToken, function(req, res) {
-      console.log('body', req.body);
       var data = {};
 
       var fileName = req.body.fileName;
       var type = req.body.filetype;
       var content = req.body.content;
-      data[fileName+'.'+type] = {
+      data[fileName + '.' + type] = {
         content : content
-      }
-      console.log('fileName', fileName);
-      console.log('content', content);
+      };
 
       //post request from express to gitHub API
       request.post({
         url : 'https://api.github.com/gists',
         json : true,
         headers : {
-          authorization : 'Bearer '+req.access_token,
+          authorization : 'Bearer ' + req.access_token,
           'User-Agent' : 'Node'
         },
         body : {
@@ -67,7 +64,7 @@ router
 
       //get request from express to gitHub API to receive single gist
       request.get({
-        url : 'https://api.github.com/gists',
+        url : 'https://api.github.com/gists/' + req.params.id,
         json : true,
         headers : {
           Authorization : 'Bearer '+req.access_token,
@@ -80,6 +77,23 @@ router
 
         res.json(JSON.parse(body));
       });
+    })
+    .delete(getAuthBearerToken, function(req, res) {
+      console.log('string', req.params.id);
+      request.del({
+        url : 'https://api.github.com/gists/' + req.params.id,
+        json : true,
+        headers : {
+          Authorization : 'Bearer '+req.access_token,
+          'User-Agent' : 'Node'
+        }
+      }, function(err, response, body) {
+        if(err) {
+          return res.status(500).json(err);
+        }
+
+        res.json(body);
+      });
     });
 
 //put request from express to gitHub to edit specific gists
@@ -87,7 +101,6 @@ router
 //delete request from express to gitHub api to delete a specific gists
 
 function getAuthBearerToken(req, res, next) {
-  console.log(req.headers.authorization);
   if(req.headers.hasOwnProperty('authorization') === false) {
     return res.status(401).json({ error : 401, message : 'Bearer auth token not found in headers.'}
     );

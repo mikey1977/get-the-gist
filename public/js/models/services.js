@@ -13,4 +13,8 @@ zeGists.service('httpRequest', ['$http', function($http) {
     console.log('newGists', newGist);
     return $http.post('http://localhost:3000/gists', newGist);
   };
+
+  this.deleteGists = function(id) {
+    return $http.delete('http://localhost:3000/gists/'+id);
+  };
 }]);
