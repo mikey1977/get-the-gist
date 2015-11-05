@@ -2,6 +2,10 @@
   <form name='subNewGists'>
 
     <div>
+      <button type='button' ng-disabled='subNewGists.$invalid' ng-click='create(newGist)'>#</button>
+    </div>
+
+    <div>
       <label>File Name
         <input type='text' class='inputField' ng-model='newGist.fileName'>
       </label>
@@ -25,13 +29,12 @@
 
     <div>
       <label>Content
-       <input type='text' class='inputField' id='content' ng-model='newGist.content'>
+      <textarea class='inputField' id='content' cols="50" rows="10" ng-model='newGist.content'></textarea>
+<!--        <input type='text' class='inputField' id='content' ng-model='newGist.content'> -->
       </label>
     </div>
 
 
-    <div>
-      <button type='button' ng-disabled='subNewGists.$invalid' ng-click='create(newGist)'>#</button>
-    </div>
+
   </form>
 </div>

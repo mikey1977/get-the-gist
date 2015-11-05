@@ -1,9 +1,10 @@
 .inputField {
   display: block;
   margin-left: 10px;
-  width: 500px;
+  width: 200px;
 }
 
 #content {
+  width: 1000px;
   height: 300px;
 }
