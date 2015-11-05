@@ -6,9 +6,12 @@
 </head>
 <body ng-app='zeGists'>
 
+<div ng-controller='homeController'>
   <h1>
-    {{ "zeGists" + " Manager" }}
+    <a type='button'
+    href="#/gists" style='text-decoration: none; color: black;'> {{ "zeGists" + " Manager" }} </a>
   </h1>
+</div>
 
 <div ng-view></div>
 
@@ -21,6 +24,8 @@
 <script src='js/controllers/login-controller.js'></script>
 <script src='js/controllers/authToken-controller.js'></script>
 <script src='js/controllers/newGist-controller.js'></script>
+<script src='js/controllers/go-to-your-home-controller.js'></script>
+
 <script src="js/values.js"></script>
 <script src="js/constants.js"></script>
 <script src="js/models/factories.js"></script>
